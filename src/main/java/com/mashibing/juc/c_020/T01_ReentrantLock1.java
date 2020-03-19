@@ -8,6 +8,10 @@ package com.mashibing.juc.c_020;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 1、m1 和 m2 不可同时执行，是因为 两个线程使用相同的 锁对象，
+ * 2、m1 中可以 调用 m2 并且正常执行，是因为 synchronized 是可重入锁
+ */
 public class T01_ReentrantLock1 {
 	synchronized void m1() {
 		for(int i=0; i<10; i++) {
